@@ -7,10 +7,15 @@
     </div>
     <div class="card-body">
       <!-- <input type="text" class="textInput" ref="textInput" placeholder="Share..."> -->
-      <textarea ref="textInput" rows="8" cols="55">{ text }</textarea>
+      <textarea ref="textInput" rows="8" cols="38">{ text }</textarea>
 
-      <div class="buttonGroup">
-        <button type="button" class="btn btn-info" onclick= { addPost }>Post</button>
+      <div class="iconGroup">
+        <label for="iconArtist" class="iconArtist"><i class="fas fa-users fa-2x"></i><br>artist</label>
+        <label for="iconArtwork"><i class="fab fa-pushed fa-2x"></i></i><br>artwork</label>
+
+        <div class="button">
+          <button type="button" class="btn btn-info btn-lg" onclick= { addPost }>Post</button>
+        </div>
       </div>
     </div>
     <div class="card-footer text-muted">
@@ -21,20 +26,19 @@
   <script>
     var tag = this;
     var text = "";
-    let observer = riot.observable();
+    // let observer = riot.observable();
 
     addPost () {
       var text = "";
-      var textInput = this.text;
+      var textInput = this.refs.textInput.value;
+      console.log(textInput);
       var userInput = {
         userName:"",
         profileUrl: "",
         text: textInput,
         imgUrl:""
       };
-      // observer.trigger('post:add', userInput);
-      this.posts.push(userInput);
-      console.log(this);
+      observer.trigger('post:add', userInput);
     }
 
 
@@ -42,10 +46,21 @@
   <style>
     :scope {
       display: block;
+      margin-right: 25px;
     }
 
-    .buttonGroup {
+    .iconGroup {
+      margin-top: 20px;
+    }
 
+    .iconArtist{
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .button {
+
+      float: right;
       margin-top: 20px;
     }
   </style>
