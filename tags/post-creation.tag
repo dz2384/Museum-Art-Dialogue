@@ -3,12 +3,14 @@
   <div class="card postcreation">
     <div class="card-header text-white bg-info">
       <span>Create your New Post!</span>
-
     </div>
     <div class="card-body">
       <!-- <input type="text" class="textInput" ref="textInput" placeholder="Share..."> -->
-      <textarea ref="textInput" rows="8" cols="38">{ text }</textarea>
 
+      <div>
+        <textarea  class="postinput" ref="textInput" rows="8">{ text }</textarea>
+        <p>#Dali #oilpaint #surrealism #1999</p>
+      </div>
       <div class="iconGroup1">
         <label for="labelImages" class="labelImages"><i class="far fa-images fa-2x iconImages"></i><br>Images</label>
         <label for="labelVideo" class="labelVideo"><i class="fas fa-video fa-2x iconVideo"></i><br>Video</label>
@@ -30,9 +32,6 @@
           <button type="button" class="btn btn-info btn-lg" onclick= { addPost }>Post</button>
         </div>
 
-    </div>
-    <div class="card-footer text-muted">
-      <span>#Dali #1999</span>
     </div>
   </div>
 
@@ -143,6 +142,10 @@
 
       float: right;
       margin-top: 20px;
+    }
+
+    .postinput{
+      width: 90%;
     }
   </style>
 </post-creation>
