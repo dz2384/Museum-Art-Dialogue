@@ -15,9 +15,18 @@
     </div>
   </div>
 
+  <post if={ post.push }></post>
+  <button type="button" class="btn btn-info btn-lg" onclick={ deletePost }>Delete</button>
+  
   <script>
     var tag = this;
     console.log('post-item.tag');
+
+    this.post = { publish:true };
+    deletePost(e){
+      this.post.publish = false;
+    }
+
   </script>
   <style>
     :scope {
