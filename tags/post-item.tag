@@ -2,7 +2,7 @@
 
   <div class="card postlist">
     <div class="card-header bg-light">
-      <img src={ post.profileurl} alt="profilePic">
+      <img src={ post.profileurl } alt="profilePic">
       <span>{ post.userName }</span>
     </div>
     <div class="card-body">
@@ -10,22 +10,29 @@
       <img src={ post.imgurl="post.imgUrl" }="}" alt="imgInput">
     </div>
     <div class="card-footer">
-      <i class="far fa-thumbs-up fa-2x iconLike"></i>
       <i class="far fa-comments fa-2x iconComments"></i>
+      <i class="far fa-thumbs-up fa-2x iconLike"></i>
     </div>
   </div>
 
-  <post if={ post.push }></post>
-  <button type="button" class="btn btn-info btn-lg" onclick={ deletePost }>Delete</button>
-  
+
+  <div class="button">
+    <button type="button" class="btn btn-info btn-lg" onclick={ deletePost }>Delete</button>
+  </div>
+
   <script>
     var tag = this;
     console.log('post-item.tag');
 
-    this.post = { publish:true };
-    deletePost(e){
-      this.post.publish = false;
+    deletePost(event){
+      observer.trigger('post:delete');
+      this.deletedPosts = getDeletedPosts(opts.posts);
     }
+
+    function getDeletedPosts(posts) {
+      return posts.filter(post => posts.deleted).length;
+    }
+
 
   </script>
   <style>
@@ -34,16 +41,18 @@
       margin-top: 20px;
     }
 
-    .iconLike {
-
+    .iconComments {
+      color: #1e9dac;
       float: right;
     }
 
-    .iconComments {
-
+    .iconLike {
+      color: #1e9dac;
       float: right;
       margin-right: 10px;
     }
+
+
 
   </style>
 </post-item>

@@ -43,12 +43,14 @@
     addPost () {
       var text = "";
       var textInput = this.refs.textInput.value;
+      var deleted = false;
       console.log(textInput);
       var userInput = {
-        userName:"",
+        userName:"Alicia",
         profileUrl: "",
         text: textInput,
-        imgUrl:""
+        imgUrl:"",
+        deleted: false
       };
       observer.trigger('post:add', userInput);
     }

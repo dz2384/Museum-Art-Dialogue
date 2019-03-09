@@ -19,38 +19,37 @@
     </div>
 
 
-
-
-
-
-
-
     <script>
         var tag = this;
-        console.log('postpage.tag');
+
         this.posts = [{
           userName:"Somebody",
           profileUrl: "",
           text: "hh",
-          imgUrl: ""
+          imgUrl: "",
+          deleted: false
       },{
         userName:"Someone",
         profileUrl: "",
         text: "kk",
-        imgUrl: ""
+        imgUrl: "",
+        deleted: false
       },{
         userName:"Something",
         profileUrl: "",
         text:"gg",
-        imgUrl:""
+        imgUrl:"",
+        deleted: false
       }];
 
       observer.on('post:add', function(userInput) {
-        console.log(userInput);
-        console.dir(tag);
-        console.log(tag.posts);
         tag.posts.push(userInput);
         tag.update();
+      });
+
+      observer.on('post:delete', () => {
+        this.posts = this.posts.filter (posts => !posts.deleted);
+        this.update();
       });
 
     </script>
