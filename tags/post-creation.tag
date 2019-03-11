@@ -39,6 +39,7 @@
     var tag = this;
     var text = "";
     // let observer = riot.observable();
+    console.log(this.opts);
 
     addPost () {
       var text = "";
@@ -50,8 +51,10 @@
         profileUrl: "",
         text: textInput,
         imgUrl:"",
-        deleted: false
+        deleted: false,
+        key: this.opts.keynumber
       };
+      console.log(userInput);
       observer.trigger('post:add', userInput);
     }
 

@@ -35,8 +35,8 @@
     // }
 
     deletePost(event){
-      //this.opts.posts.
-      observer.trigger('post:delete');
+      console.log(this.opts.posts[this.post.key]);
+      observer.trigger('post:delete', this.post.key);
     }
 
 

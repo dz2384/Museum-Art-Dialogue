@@ -7,14 +7,14 @@
       </div>
       <div class="col-6">
         <div class="postlist">
-            <post-item each = { post, i in posts } user={ currentUser }></post-item>
+            <post-item each = { post, i in posts } user={ currentUser } posts= {posts}></post-item>
         </div>
 
       </div>
       <div class="col-3">
         <div class="postcreation">
-          <post-creation></post-creation>
-        </div>
+          <post-creation keynumber= { postnumber }></post-creation>
+        </div> 
       </div>
     </div>
 
@@ -24,38 +24,44 @@
         this.currentUser = "Alicia";
 
         this.posts = [{
+          key: 0,
           userName:"Somebody",
           profileUrl: "",
           text: "hh",
           imgUrl: "",
           deleted: false
       },{
+        key: 1,
         userName:"Someone",
         profileUrl: "",
         text: "kk",
         imgUrl: "",
         deleted: false
       },{
+        key: 2,
         userName:"Something",
         profileUrl: "",
         text:"gg",
         imgUrl:"",
         deleted: false
       }];
+      
+      this.postnumber = this.posts.length;
+      console.log(this.postnumber);
 
       observer.on('post:add', function(userInput) {
         tag.posts.push(userInput);
         tag.update();
       });
 
-      // observer.on('post:delete', () => {
-      //   this.posts = this.posts.filter (posts => !posts.deleted);
-      //   this.update();
-      // });
+  
 
-      observer.on('post:delete', function(event){
+      observer.on('post:delete', function(keyIn){
+        console.log(keyIn);
+        tag.posts[keyIn].deleted = true;
         tag.posts = tag.posts.filter(function(post){
           return !post.deleted});
+        tag.update();
       });
 
     </script>
