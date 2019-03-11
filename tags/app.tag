@@ -3,11 +3,11 @@
 
     <div class="row">
       <div class="col-3">
-         <profile></profile>
+         <profile user= {currentUser}></profile>
       </div>
       <div class="col-6">
         <div class="postlist">
-            <post-item each = { post, i in posts }></post-item>
+            <post-item each = { post, i in posts } user={ currentUser }></post-item>
         </div>
 
       </div>
@@ -21,6 +21,7 @@
 
     <script>
         var tag = this;
+        this.currentUser = "Alicia";
 
         this.posts = [{
           userName:"Somebody",
@@ -47,9 +48,14 @@
         tag.update();
       });
 
-      observer.on('post:delete', () => {
-        this.posts = this.posts.filter (posts => !posts.deleted);
-        this.update();
+      // observer.on('post:delete', () => {
+      //   this.posts = this.posts.filter (posts => !posts.deleted);
+      //   this.update();
+      // });
+
+      observer.on('post:delete', function(event){
+        tag.posts = tag.posts.filter(function(post){
+          return !post.deleted});
       });
 
     </script>

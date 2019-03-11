@@ -2,7 +2,7 @@
     <div class="card profile">
       <div class="card-header text-white bg-info">
         <i class="far fa-user-circle fa-2x"></i>
-        <span class="userName">Alicia</span>
+        <span class="userName"> {this.opts.user} </span>
         <div class="card-body">
           <h6>Art student at School of Visual Art</h6>
           <h6>Loves coffee and museums</h6>
@@ -14,6 +14,7 @@
     </div>
     <script>
         var tag = this;
+
     </script>
     <style>
         :scope {

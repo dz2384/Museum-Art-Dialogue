@@ -16,21 +16,27 @@
   </div>
 
 
-  <div class="button">
+  <div if= { this.opts.user === post.userName } class="button">
     <button type="button" class="btn btn-info btn-lg" onclick={ deletePost }>Delete</button>
   </div>
 
   <script>
     var tag = this;
     console.log('post-item.tag');
+    console.log(this.opts.currentUser, this.post.user)
+
+    // deletePost(event){
+    //   observer.trigger('post:delete');
+    //   this.deletedPosts = getDeletedPosts(opts.posts);
+    // }
+    //
+    // function getDeletedPosts(posts) {
+    //   return posts.filter(post => posts.deleted).length;
+    // }
 
     deletePost(event){
+      //this.opts.posts.
       observer.trigger('post:delete');
-      this.deletedPosts = getDeletedPosts(opts.posts);
-    }
-
-    function getDeletedPosts(posts) {
-      return posts.filter(post => posts.deleted).length;
     }
 
 
