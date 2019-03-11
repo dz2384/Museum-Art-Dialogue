@@ -20,7 +20,7 @@
 
         <div class="iconGroup2">
           <label for="labelArtist" class="labelArtist"><i class="fas fa-users fa-2x iconArtist"></i><br>Artist</label>
-          <label for="labelArtwork" class="labelArtwork"><i class="fab fa-pushed fa-2x iconArtwork"></i></i><br>Artwork</label>
+          <label for="labelArtwork" class="labelArtwork"><i class="fab fa-pushed fa-2x iconArtwork"></i><br>Artwork</label>
 
         </div>
 
@@ -56,6 +56,7 @@
       };
       console.log(userInput);
       observer.trigger('post:add', userInput);
+      this.refs.textInput.value = "";
     }
 
 
