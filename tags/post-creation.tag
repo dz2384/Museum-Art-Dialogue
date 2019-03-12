@@ -59,7 +59,7 @@
       if (textInput.length > 0) {
         observer.trigger('post:add', userInput);
       } else {
-        alert ("You haven't typed anything!");
+        alert ("Sorry, you haven't typed anything.");
       }
 
     }
