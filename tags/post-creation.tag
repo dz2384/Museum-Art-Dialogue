@@ -58,6 +58,8 @@
       console.log(userInput);
       if (textInput.length > 0) {
         observer.trigger('post:add', userInput);
+      } else {
+        alert ("You haven't typed anything!");
       }
 
     }
