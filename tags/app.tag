@@ -26,23 +26,23 @@
         this.posts = [{
           key: 0,
           userName:"Linda Tiger",
-          profileUrl: "",
+          profileUrl: "assets/profile-11.png",
           text: "Impressionism was not an exclusively French affair. Ahead of Christie’s inaugural sale of British Impressionism on 22 November, Alastair Smart and specialist Brandon Lindberg consider the movement’s impact across the English Channel. #Impressionism",
-          imgUrl: "",
+          imgUrl: "../assets/pic-14.png",
           deleted: false
       },{
         key: 1,
-        userName:"Someone",
-        profileUrl: "",
+        userName:"Amanda",
+        profileUrl: "assets/profile-12.png",
         text: "The roiling landscape scenes betray the redundance of animating images that already sizzle with energy, but the portraiture works beautifully, especially because the actors who supply the characters' voices and visages are first-rate. #Impressionism #lovingvincent #movie",
-        imgUrl: "",
+        imgUrl: "assets/pic-16.png",
         deleted: false
       },{
         key: 2,
-        userName:"Something",
-        profileUrl: "",
+        userName:"Bill",
+        profileUrl: "assets/profile-13.png",
         text:"I think this exhibition can not cover the diversity and richness of Chinese immigrate lives. The storyteller, which in this case is the photographer and the curator, only depicts “one story” --- the poverty and backwardness of Chinese immigration, which might contains bias and stereotype.#museumofthecityofnewyork #interiorlives #chineseculture #photographs #march24",
-        imgUrl:"",
+        imgUrl:"assets/pic-15.png",
         deleted: false
       }];
 

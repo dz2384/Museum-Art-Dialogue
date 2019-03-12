@@ -1,7 +1,8 @@
 <profile>
     <div class="card profile">
       <div class="card-header text-white bg-info">
-        <i class="far fa-user-circle fa-2x"></i>
+        <!-- <i class="far fa-user-circle fa-2x"></i> -->
+        <img src= "../assets/profile-14.png" alt="currentUserProfile" class="currentUserProfile">
         <span class="userName"> {this.opts.user} </span>
         <div class="card-body">
           <h6>Art student at School of Visual Art</h6>
@@ -31,5 +32,6 @@
           font-size: 25px;
 
         }
+
     </style>
 </profile>

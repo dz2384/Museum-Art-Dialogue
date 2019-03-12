@@ -48,9 +48,9 @@
       console.log(textInput);
       var userInput = {
         userName:"Alicia",
-        profileUrl: "",
+        profileUrl: "../assets/profile-14.png",
         text: textInput,
-        imgUrl:"https://www.christies.com/media-library/images/features/articles/2017/10/20/re-framing-british-impressionism/main-clausen_-_evening_song_high_res.jpg",
+        imgUrl:"",
         deleted: false,
         key: this.opts.keynumber
       };
