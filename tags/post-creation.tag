@@ -50,7 +50,7 @@
         userName:"Alicia",
         profileUrl: "",
         text: textInput,
-        imgUrl:"",
+        imgUrl:"https://www.christies.com/media-library/images/features/articles/2017/10/20/re-framing-british-impressionism/main-clausen_-_evening_song_high_res.jpg",
         deleted: false,
         key: this.opts.keynumber
       };

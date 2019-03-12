@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
       <p>{ post.text }</p>
-      <img src={ post.imgurl="post.imgUrl" }="}" alt="imgInput">
+      <img src={ post.imgurl="post.imgUrl" }="https://www.christies.com/media-library/images/features/articles/2017/10/20/re-framing-british-impressionism/main-clausen_-_evening_song_high_res.jpg" alt="imgInput">
     </div>
     <div class="card-footer">
       <i class="far fa-comments fa-2x iconComments"></i>
