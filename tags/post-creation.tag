@@ -54,9 +54,12 @@
         deleted: false,
         key: this.opts.keynumber
       };
+        this.refs.textInput.value = "";
       console.log(userInput);
-      observer.trigger('post:add', userInput);
-      this.refs.textInput.value = "";
+      if (textInput.length > 0) {
+        observer.trigger('post:add', userInput);
+      }
+
     }
 
 
