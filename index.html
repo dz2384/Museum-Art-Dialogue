@@ -18,10 +18,22 @@
   <script src="./tags/post-item.tag" type="riot/tag"></script>
   <script src="./tags/profile.tag" type="riot/tag"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/riot/3.13.2/riot+compiler.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
 
   <script>
+    var config = {
+    apiKey: "AIzaSyCG8FGWEfNhPiUo837JbyASlYfe9dW4j8Y",
+    authDomain: "museum-art-dialogue.firebaseapp.com",
+    databaseURL: "https://museum-art-dialogue.firebaseio.com",
+    projectId: "museum-art-dialogue",
+    storageBucket: "",
+    messagingSenderId: "519189952977"
+  };
+  firebase.initializeApp(config);
+
     riot.mount('*');
     let observer = riot.observable();
+    let database = firebase.firestore();
   </script>
 
 </body>

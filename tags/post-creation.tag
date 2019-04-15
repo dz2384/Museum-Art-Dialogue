@@ -29,7 +29,7 @@
         </div>
 
         <div class="button">
-          <button type="button" class="btn btn-info btn-lg" onclick= { addPost }>Post</button>
+          <button type="button" class="btn btn-info btn-lg" onclick={ addPost }>Post</button>
         </div>
 
     </div>
@@ -38,31 +38,31 @@
   <script>
     var tag = this;
     var text = "";
+
     // let observer = riot.observable();
-    console.log(this.opts);
+    var deleted = false;
+    console.log("textInput");
 
-    addPost () {
-      var text = "";
+    addPost() {
       var textInput = this.refs.textInput.value;
-      var deleted = false;
-      console.log(textInput);
-      var userInput = {
-        userName:"Alicia",
-        profileUrl: "../assets/profile-14.png",
-        text: textInput,
-        imgUrl:"",
-        deleted: false,
-        key: this.opts.keynumber
-      };
-        this.refs.textInput.value = "";
-      console.log(userInput);
-      if (textInput.length > 0) {
-        observer.trigger('post:add', userInput);
-      } else {
-        alert ("Sorry, you haven't typed anything.");
-      }
+      if (textInput !== undefined) {
+        console.log("no undefined")
+        let postColRef = database.collection("postCollection");
+        let id = postColRef.doc().id;
 
+        postColRef.doc(id).set({
+          userName: "Alicia",
+          profileUrl: "../assets/profile-14.png",
+          text: textInput,
+          id: id,
+          deleted: false,
+          imgUrl: "../assets/pic-15.png",
+          timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        this.refs.textInput.value = "";
+      } else { console.log("undefined") }
     }
+
 
 
   </script>
