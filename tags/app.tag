@@ -23,9 +23,6 @@
         var tag = this;
         this.currentUser = "Alicia";
 
-          deleted: false
-        profileUrl: "assets/profile-12.png",
-        deleted: false
         var postColRef = database.collection("postCollection");
 
         postColRef.orderBy('timestamp').onSnapshot(function(snapshot) {
