@@ -69,10 +69,10 @@
       // });
 
 
-
-      // observer.on('post:delete', function(keyIn){
-      //   console.log(keyIn);
-      //   tag.posts[keyIn].deleted = true;
+      // let observer = riot.observable();
+      // observer.on('post:delete', function(id){
+      //
+      //   tag.posts.deleted = true;
       //   tag.posts = tag.posts.filter(function(post){
       //     return !post.deleted});
       //   tag.update();

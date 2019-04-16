@@ -24,10 +24,10 @@
     var tag = this;
     console.log('post-item.tag');
     console.log(this.opts.currentUser, this.post.user)
+    var postColRef = database.collection("postCollection");
 
-    deletePost(event){
-      console.log(this.opts.posts[this.post.key]);
-      observer.trigger('post:delete', this.post.key);
+    deletePost() {
+      database.collection("postCollection").doc(this.post.id).delete();
     }
 
 

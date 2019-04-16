@@ -60,7 +60,7 @@
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
         this.refs.textInput.value = "";
-      } else { console.log("undefined") }
+      }
     }
 
 
