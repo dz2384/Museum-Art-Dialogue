@@ -25,7 +25,7 @@
 
         var postColRef = database.collection("postCollection");
 
-        postColRef.orderBy('timestamp').onSnapshot(function(snapshot) {
+        postColRef.orderBy('timestamp','desc').onSnapshot(function(snapshot) {
           var colPosts = [];
           snapshot.forEach(function(doc) {
             colPosts.push(doc.data());
