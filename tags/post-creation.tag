@@ -12,7 +12,8 @@
         <p>#Dali #oilpaint #surrealism #1999</p>
       </div>
       <div class="iconGroup1">
-        <label for="labelImages" class="labelImages"><i class="far fa-images fa-2x iconImages"></i><br>Images</label>
+        <label for="labelImages" class="labelImages"><i class="far fa-images fa-2x iconImages"></i><br>Images
+        <input type="text" ref="imgUrl" placeholder="Input Image URL Here"></label></br>
         <label for="labelVideo" class="labelVideo"><i class="fas fa-video fa-2x iconVideo"></i><br>Video</label>
         <label for="labelPoll" class="labelPoll"><i class="fas fa-poll fa-2x iconPoll"></i><br>Poll</label>
         <label for="labelLocation" class="labelLocation"><i class="fas fa-map-marker-alt fa-2x iconLocation"></i><br>Location</label>
@@ -41,14 +42,14 @@
 
     // let observer = riot.observable();
     var deleted = false;
-    console.log("textInput");
 
     addPost() {
       var textInput = this.refs.textInput.value;
+      var userImage = this.refs.imgUrl.value;
       if (textInput !== undefined) {
-        console.log("no undefined")
         let postColRef = database.collection("postCollection");
         let id = postColRef.doc().id;
+        console.dir(userImage);
 
         postColRef.doc(id).set({
           userName: "Alicia",
@@ -56,7 +57,7 @@
           text: textInput,
           id: id,
           deleted: false,
-          imgUrl: "../assets/pic-15.png",
+          imgUrl: userImage,
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         });
         this.refs.textInput.value = "";

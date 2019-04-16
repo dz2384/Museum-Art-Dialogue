@@ -7,7 +7,7 @@
     </div>
     <div class="card-body">
       <p>{ post.text }</p>
-      <img src={ post.imgUrl }>
+      <img src={ post.imgUrl } width="80%">
     </div>
     <div class="card-footer">
       <i class="far fa-comments fa-2x iconComments"></i>
@@ -22,8 +22,7 @@
 
   <script>
     var tag = this;
-    console.log('post-item.tag');
-    console.log(this.opts.currentUser, this.post.user)
+
     var postColRef = database.collection("postCollection");
 
     deletePost() {

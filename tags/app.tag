@@ -30,7 +30,7 @@
           snapshot.forEach(function(doc) {
             colPosts.push(doc.data());
           });
-          console.log(colPosts);
+
           tag.posts = colPosts;
           tag.update();
         })
